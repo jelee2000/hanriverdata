@@ -32,6 +32,6 @@ Production deployment: https://hanriverdata.vercel.app. Custom domain: `hanriver
 
 Deploy locally with `npm run build` followed by `npx vercel deploy --prebuilt --prod --scope jelee2000s-projects`. Private files travel only in the server-function bundle. Git auto-deployment is deliberately disconnected because the public repository does not contain the brand exports. A fresh checkout needs the ZIP restored and unpacked into `private-brand-kit/` before building.
 
-Namecheap BasicDNS is being switched from GitHub Pages to Vercel. Vercel's project-specific recommended apex A records are `216.198.79.1` and `64.29.17.1`; retrieve current recommendations with `vercel domains verify` before editing DNS. The previous GitHub Pages A records were `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`, with `www` pointing to `jelee2000.github.io`.
+Namecheap BasicDNS points the website to Vercel. Vercel's project-specific recommended apex A records are `216.198.79.1` and `64.29.17.1`; `www` points to `acc6ee5819757e99.vercel-dns-017.com.`. Retrieve current recommendations with `vercel domains verify` before editing DNS. The previous GitHub Pages A records were `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`, with `www` pointing to `jelee2000.github.io`.
 
-Website DNS changes must preserve the Google Workspace MX, SPF, DKIM, and domain-verification records.
+Website DNS changes must preserve the Google Workspace MX, SPF, DKIM, domain-verification, and DMARC records. DMARC is published at `_dmarc` with `v=DMARC1; p=none; rua=mailto:founders@hanriverdata.com`. This initial monitoring policy requests aggregate reports for both founders and does not yet request quarantine or rejection of failing mail.
