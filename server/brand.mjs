@@ -19,7 +19,7 @@ function safeEqual(a, b) {
 }
 
 export function createHandler({ env = process.env, assets = new URL('./assets/', import.meta.url), now = Date.now } = {}) {
-  // Supplemental per-instance throttling; the generated password has 144 bits of entropy.
+  // Supplemental per-instance throttling for failed sign-in attempts.
   const attempts = new Map();
   const secret = env.BRAND_SESSION_SECRET;
   const passwordHash = env.BRAND_PASSWORD_HASH;
