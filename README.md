@@ -6,6 +6,8 @@ A minimal website for Han River Data: a public HTML/CSS homepage and a password-
 
 Page copy and styling are in `index.html`. The closing contact link opens an email to `founders@hanriverdata.com`, a Google Workspace mailing group containing `jonathan@hanriverdata.com` and `kevin@hanriverdata.com`. Both founders own the group. Outside senders can email the group; conversations are visible only to group members, and membership is by invitation.
 
+The header's EN / KO dropdown switches between the English and Korean sections in `index.html` and remembers the visitor's choice locally. English is the default. Each section has its own language and heading, and the page's language changes with the selection for assistive technology.
+
 The existing `contact@hanriverdata.com` alias still delivers to `jonathan@hanriverdata.com`.
 
 ## Brand assets
