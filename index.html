@@ -36,14 +36,13 @@
       h2 { max-width: 540px; margin: 0 0 30px; font-size: clamp(32px, 4.2vw, 44px); line-height: 1.18; letter-spacing: -.055em; font-weight: 400; text-wrap: balance; }
       p { max-width: 510px; margin: 0; color: #62655e; font-size: 15px; line-height: 1.85; letter-spacing: -.015em; }
       p + p { margin-top: 20px; }
-      .contact { display: inline-flex; align-items: center; gap: 34px; width: fit-content; min-height: 46px; padding: 12px 18px; margin-top: 38px; border: 1px solid #bfc2b8; border-radius: 3px; color: #252723; font-size: 13px; text-decoration: none; transition: background-color .15s, border-color .15s; }
-      .contact:hover { background: #eaece4; border-color: #858c7d; }
-      .contact:focus-visible { outline: 2px solid #4e6346; outline-offset: 5px; }
-      .contact svg { width: 13px; height: 13px; }
+      .contact { margin-top: 38px; }
+      .contact a { color: #252723; text-decoration-color: #bfc2b8; text-underline-offset: 4px; white-space: nowrap; }
+      .contact a:hover { text-decoration-color: currentColor; }
+      .contact a:focus-visible { outline: 2px solid #4e6346; outline-offset: 5px; }
       footer { margin-top: 76px; padding-top: 18px; border-top: 1px solid #dedfd7; color: #777b72; font-size: 11px; letter-spacing: .025em; }
       ::selection { color: #252723; background: #dce1d3; }
       @media (max-width: 480px) { main { width: calc(100% - 48px); padding-block: 56px; } header { margin-bottom: 58px; } h2 { font-size: 34px; } footer { margin-top: 60px; } }
-      @media (prefers-reduced-motion: reduce) { .contact { transition: none; } }
     </style>
   </head>
   <body>
@@ -56,7 +55,7 @@
         <h2 id="mission">high-quality data for<br>frontier intelligence.</h2>
         <p>we work with domain experts and operators across korea to create high-quality training data for advanced ai models.</p>
         <p>co-founded by a stanford researcher and a venture investor at a seoul-based vc firm, our mission is to advance frontier intelligence through human expertise.</p>
-        <a class="contact" href="mailto:contact@hanriverdata.com" aria-label="Contact Han River Data by email">contact us <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 12.5 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.25"/></svg></a>
+        <p class="contact">if you’re interested in working with us, reach us at <a href="mailto:founders@hanriverdata.com">founders@hanriverdata.com</a>.</p>
       </section>
       <footer>han river data © 2026</footer>
     </main>

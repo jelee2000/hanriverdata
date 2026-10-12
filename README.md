@@ -4,7 +4,9 @@ A minimal, single-page website for Han River Data. Plain HTML and CSS, with no b
 
 ## Edit
 
-Page copy and styling are in `index.html`. The contact button opens an email to `contact@hanriverdata.com`, a Google Workspace alias that delivers to `jonathan@hanriverdata.com`.
+Page copy and styling are in `index.html`. The closing contact link opens an email to `founders@hanriverdata.com`, a Google Workspace mailing group containing `jonathan@hanriverdata.com` and `kevin@hanriverdata.com`. Both founders own the group. Outside senders can email the group; conversations are visible only to group members, and membership is by invitation.
+
+The existing `contact@hanriverdata.com` alias still delivers to `jonathan@hanriverdata.com`.
 
 ## Preview
 
