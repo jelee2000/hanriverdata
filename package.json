@@ -1,0 +1,11 @@
+{
+  "name": "hanriverdata",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-vercel.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev": "node scripts/dev-server.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

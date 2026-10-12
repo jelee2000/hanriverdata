@@ -1,6 +1,6 @@
 # han river data
 
-A minimal, single-page website for Han River Data. Plain HTML and CSS, with no build step or dependencies.
+A minimal website for Han River Data: a public HTML/CSS homepage and a password-protected brand kit served by a Vercel Node.js function. No third-party runtime dependencies.
 
 ## Edit
 
@@ -10,20 +10,28 @@ The existing `contact@hanriverdata.com` alias still delivers to `jonathan@hanriv
 
 ## Brand assets
 
-The approved river mark appears in the header, browser icons, and social preview. The original website font stack and copy remain unchanged.
+The approved river mark appears in the header, browser icons, and social preview. The website uses its original system font stack.
 
-Only the website's river mark (`river-mark.svg`), browser icons, and sharing image (`social-preview.png`) belong in the published site. Do not publish a brand-kit page or downloadable asset collection.
+Only the homepage, river mark (`river-mark.svg`), browser icons, and sharing image (`social-preview.png`) belong in the public static output. `/brand/` and every brand download go through the password-checking server function. Never put brand exports or the ZIP in a public static folder or Git.
 
-The complete kit is stored locally in the Git-ignored `private-brand-kit/` directory for sharing through the team's Drive. It includes square and banner logos, light/dark/transparent SVG and PNG exports, editable vector masters, an export script, usage notes, and `han-river-data-brand-kit.zip`. Keep those files out of Git and deployment artifacts.
+The complete kit is stored locally in the Git-ignored `private-brand-kit/` directory. It includes square and banner logos, light/dark/transparent SVG and PNG exports, vector masters, an export script, usage notes, and `han-river-data-brand-kit.zip`. The build copies an allowlist of these files into the private function bundle only. The gallery template is `server/gallery.html`.
+
+The shared password is checked against a scrypt hash in Vercel's `BRAND_PASSWORD_HASH` environment variable. `BRAND_SESSION_SECRET` signs eight-hour sessions. Cookies are Secure, HttpOnly, and SameSite=Strict; all private responses disable caching. Missing credentials fail closed. The plaintext password is stored only in the local ignored `.preview/brand-access.txt` handoff file, not in source code or Vercel. To rotate access, change the password hash and session secret in Vercel, then redeploy.
+
+Earlier public Git history still contains the original exports. The new gate protects current website access; it does not remove historical copies.
 
 ## Preview
 
-Run `python3 -m http.server 8000 --bind 127.0.0.1` from this directory and open `http://127.0.0.1:8000`.
+Run `npm run build`, then `npm test` for the authentication and output-isolation checks. `npm run dev` serves the build at `http://127.0.0.1:8000`; supply the two brand environment variables to test login locally. Without them, the brand route returns 503.
 
 ## Publish
 
-GitHub Pages serves the root of the `main` branch. Changes pushed to `main` publish automatically. The custom domain is `hanriverdata.com`, configured in GitHub Pages and the `CNAME` file.
+Vercel project: https://vercel.com/jelee2000s-projects/hanriverdata (personal workspace only).
 
-Namecheap BasicDNS points the apex domain (`@`) to GitHub Pages using four A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. The `www` CNAME points to `jelee2000.github.io`.
+Production deployment: https://hanriverdata.vercel.app. Custom domain: `hanriverdata.com`.
+
+Deploy locally with `npm run build` followed by `npx vercel deploy --prebuilt --prod --scope jelee2000s-projects`. Private files travel only in the server-function bundle. Git auto-deployment is deliberately disconnected because the public repository does not contain the brand exports. A fresh checkout needs the ZIP restored and unpacked into `private-brand-kit/` before building.
+
+Namecheap BasicDNS is being switched from GitHub Pages to Vercel. Vercel's project-specific recommended apex A records are `216.198.79.1` and `64.29.17.1`; retrieve current recommendations with `vercel domains verify` before editing DNS. The previous GitHub Pages A records were `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`, with `www` pointing to `jelee2000.github.io`.
 
 Website DNS changes must preserve the Google Workspace MX, SPF, DKIM, and domain-verification records.

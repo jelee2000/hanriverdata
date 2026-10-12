@@ -1,3 +1,6 @@
 .DS_Store
 .preview/
 private-brand-kit/
+.vercel/
+.env*
+.vercel
