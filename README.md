@@ -12,9 +12,9 @@ The existing `contact@hanriverdata.com` alias still delivers to `jonathan@hanriv
 
 The approved river mark appears in the header, browser icons, and social preview. The original website font stack and copy remain unchanged.
 
-`brand/index.html` is the public brand kit at `/brand/`. It includes a downloadable ZIP, square logos (1024 × 1024), banners (2000 × 600), tightly cropped horizontal logos, stacked logos, and a 1200 × 630 social card. Light, dark, and transparent variants are supplied as SVG and PNG. See `brand/README.txt` for usage notes.
+Only the website's river mark (`river-mark.svg`), browser icons, and sharing image (`social-preview.png`) belong in the published site. Do not publish a brand-kit page or downloadable asset collection.
 
-The editable vector masters are `brand/mark.svg` and `brand/wordmark.svg`; the wordmark lettering is outlined. Run `node scripts/export-brand.cjs` with the `sharp` package available to regenerate the matching exports and root browser icons. Rebuild `brand/han-river-data-brand-kit.zip` after any asset changes; include the SVGs, PNGs, and usage notes, excluding the ZIP itself.
+The complete kit is stored locally in the Git-ignored `private-brand-kit/` directory for sharing through the team's Drive. It includes square and banner logos, light/dark/transparent SVG and PNG exports, editable vector masters, an export script, usage notes, and `han-river-data-brand-kit.zip`. Keep those files out of Git and deployment artifacts.
 
 ## Preview
 
