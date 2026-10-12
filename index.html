@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="han river data">
     <meta property="og:url" content="http://hanriverdata.com/">
-    <meta property="og:image" content="http://hanriverdata.com/social-preview.png">
+    <meta property="og:image" content="http://hanriverdata.com/brand/social-preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -18,21 +18,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="han river data">
     <meta name="twitter:description" content="high-quality data for frontier intelligence. rooted in expertise across korea.">
-    <meta name="twitter:image" content="http://hanriverdata.com/social-preview.png">
+    <meta name="twitter:image" content="http://hanriverdata.com/brand/social-preview.png">
     <title>han river data</title>
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="icon-512.png" type="image/png" sizes="512x512">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="favicon.ico?v=river-1" sizes="any">
+    <link rel="icon" href="favicon-32.png?v=river-1" type="image/png" sizes="32x32">
+    <link rel="icon" href="icon-512.png?v=river-1" type="image/png" sizes="512x512">
+    <link rel="icon" href="favicon.svg?v=river-1" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=river-1" sizes="180x180">
     <style>
       :root { color-scheme: light; background: #f7f6f2; color: #252723; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; font-synthesis: none; }
       * { box-sizing: border-box; }
       body { margin: 0; -webkit-font-smoothing: antialiased; }
       main { width: min(100% - 64px, 600px); min-height: 100svh; margin-inline: auto; display: flex; flex-direction: column; justify-content: center; padding-block: 88px; }
-      header { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 72px; }
-      h1 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 500; letter-spacing: -.035em; }
-      .initials { color: #757870; font-size: 11px; letter-spacing: .06em; }
+      header { display: flex; align-items: center; margin-bottom: 72px; }
+      h1 { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 17px; line-height: 1.5; font-weight: 500; letter-spacing: -.035em; }
+      .brand-mark { display: block; width: 26px; height: 33px; flex: none; }
       h2 { max-width: 540px; margin: 0 0 30px; font-size: clamp(32px, 4.2vw, 44px); line-height: 1.18; letter-spacing: -.055em; font-weight: 400; text-wrap: balance; }
       p { max-width: 510px; margin: 0; color: #62655e; font-size: 15px; line-height: 1.85; letter-spacing: -.015em; }
       p + p { margin-top: 20px; }
@@ -40,7 +40,9 @@
       .contact a { color: #252723; text-decoration-color: #bfc2b8; text-underline-offset: 4px; white-space: nowrap; }
       .contact a:hover { text-decoration-color: currentColor; }
       .contact a:focus-visible { outline: 2px solid #4e6346; outline-offset: 5px; }
-      footer { margin-top: 76px; padding-top: 18px; border-top: 1px solid #dedfd7; color: #777b72; font-size: 11px; letter-spacing: .025em; }
+      footer { display: flex; justify-content: space-between; gap: 24px; margin-top: 76px; padding-top: 18px; border-top: 1px solid #dedfd7; color: #777b72; font-size: 11px; letter-spacing: .025em; }
+      footer a { color: inherit; text-decoration-color: #bfc2b8; text-underline-offset: 3px; }
+      footer a:focus-visible { outline: 2px solid #4e6346; outline-offset: 5px; }
       ::selection { color: #252723; background: #dce1d3; }
       @media (max-width: 480px) { main { width: calc(100% - 48px); padding-block: 56px; } header { margin-bottom: 58px; } h2 { font-size: 34px; } footer { margin-top: 60px; } }
     </style>
@@ -48,8 +50,7 @@
   <body>
     <main>
       <header>
-        <h1>han river data</h1>
-        <span class="initials" aria-label="HRD">hrd</span>
+        <h1><img class="brand-mark" src="brand/mark.svg" width="26" height="33" alt="">han river data</h1>
       </header>
       <section aria-labelledby="mission">
         <h2 id="mission">high-quality data for<br>frontier intelligence.</h2>
@@ -57,7 +58,7 @@
         <p>co-founded by a stanford researcher and a venture investor with a seoul-based firm, our mission is to advance frontier intelligence through human expertise.</p>
         <p class="contact">reach us at <a href="mailto:founders@hanriverdata.com">founders@hanriverdata.com</a>.</p>
       </section>
-      <footer>han river data © 2026</footer>
+      <footer><span>han river data © 2026</span><a href="brand/">brand kit</a></footer>
     </main>
   </body>
 </html>

@@ -8,6 +8,14 @@ Page copy and styling are in `index.html`. The closing contact link opens an ema
 
 The existing `contact@hanriverdata.com` alias still delivers to `jonathan@hanriverdata.com`.
 
+## Brand assets
+
+The approved river mark appears in the header, browser icons, and social preview. The original website font stack and copy remain unchanged.
+
+`brand/index.html` is the public brand kit at `/brand/`. It includes a downloadable ZIP, square logos (1024 × 1024), banners (2000 × 600), tightly cropped horizontal logos, stacked logos, and a 1200 × 630 social card. Light, dark, and transparent variants are supplied as SVG and PNG. See `brand/README.txt` for usage notes.
+
+The editable vector masters are `brand/mark.svg` and `brand/wordmark.svg`; the wordmark lettering is outlined. Run `node scripts/export-brand.cjs` with the `sharp` package available to regenerate the matching exports and root browser icons. Rebuild `brand/han-river-data-brand-kit.zip` after any asset changes; include the SVGs, PNGs, and usage notes, excluding the ZIP itself.
+
 ## Preview
 
 Run `python3 -m http.server 8000 --bind 127.0.0.1` from this directory and open `http://127.0.0.1:8000`.
