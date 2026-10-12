@@ -12,6 +12,8 @@ Run `python3 -m http.server 8000 --bind 127.0.0.1` from this directory and open 
 
 ## Publish
 
-GitHub Pages serves the root of the `main` branch. Changes pushed to `main` publish automatically. The intended custom domain is `hanriverdata.com`.
+GitHub Pages serves the root of the `main` branch. Changes pushed to `main` publish automatically. The custom domain is `hanriverdata.com`, configured in GitHub Pages and the `CNAME` file.
+
+Namecheap BasicDNS points the apex domain (`@`) to GitHub Pages using four A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. The `www` CNAME points to `jelee2000.github.io`.
 
 Website DNS changes must preserve the Google Workspace MX, SPF, DKIM, and domain-verification records.
