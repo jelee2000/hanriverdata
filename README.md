@@ -4,7 +4,7 @@ A minimal, single-page website for Han River Data. Plain HTML and CSS, with no b
 
 ## Edit
 
-Page copy and styling are in `index.html`. The contact button opens an email to `jonathan@hanriverdata.com`.
+Page copy and styling are in `index.html`. The contact button opens an email to `contact@hanriverdata.com`, a Google Workspace alias that delivers to `jonathan@hanriverdata.com`.
 
 ## Preview
 
