@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { randomBytes, scryptSync } from 'node:crypto';
 import { createHandler } from '../server/brand.mjs';
@@ -91,7 +92,9 @@ test('missing secrets fail closed even with a supplied cookie', async () => {
 });
 test('deployment output contains no public kit, source, or credential files', async () => {
   const output = new URL('../.vercel/output/', import.meta.url);
-  const files = await readdir(new URL('static/', output));
-  assert.deepEqual(files.sort(), ['apple-touch-icon.png', 'favicon-32.png', 'favicon.ico', 'favicon.svg', 'icon-512.png', 'index.html', 'river-mark.svg', 'social-preview.png'].sort());
+  const entries = await readdir(new URL('static/', output), { recursive: true, withFileTypes: true });
+  const staticPath = new URL('static/', output).pathname;
+  const files = entries.filter(entry => entry.isFile()).map(entry => path.relative(staticPath, path.join(entry.parentPath, entry.name)));
+  assert.deepEqual(files.sort(), ['apple-touch-icon.png', 'favicon-32.png', 'favicon.ico', 'favicon.svg', 'icon-512.png', 'index.html', 'river-mark.svg', 'social-preview.png', 'privacy-policy/index.html', 'privacy-policy/ko/index.html', 'privacy-policy/style.css'].sort());
   assert.match(await readFile(new URL('functions/brand.func/assets/index.html', output), 'utf8'), /action="\/brand\/logout"/);
 });
